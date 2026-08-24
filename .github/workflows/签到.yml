@@ -10,13 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 150
     steps:
-      - name: 随机延迟
-        if: ${{ github.event_name == 'schedule' }}
-        run: |
-          DELAY=$(( RANDOM % 10 ))
-          echo "随机延迟 ${DELAY} 分钟，预计北京时间 00:00 后约 ${DELAY} 分触发签到"
-          sleep ${DELAY}m
-
       - name: 检出仓库
         uses: actions/checkout@v5
 
